@@ -1014,7 +1014,7 @@ namespace hand {
     static constexpr uint32
       hand_overflow_mask	= hand_mask[0] | hand_mask[1] | hand_mask[2]
       | hand_mask[3] | hand_mask[4] | hand_mask[5] | hand_mask[6];
-    return ((hand1 - hand2) & hand_overflow_mask) == 0;
+    return ((hand1 - hand2) & ~(hand_overflow_mask)) == 0;
   }
 
 }
